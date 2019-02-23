@@ -94,7 +94,7 @@ The geometry of the FDA proposed simplified centrifugal pump is shown in the Fig
 \end{figure}
 
 %  pump simulation setup
-As to the simulation set up, the velocity distribution is prescribed at the inlet (Fig.~\ref{fig:pumpgeo}), where the velocity profiles are obtained from the experimental measurements using PIV \cite{cpi}. The pressure at the outlet is set to be constant. Since the goal is to predict the flow field after reaching steady state, instead of letting the rotor rotate during simulation, the non-inertial reference frame is applied on the fluid around the rotor. This is because the flow around the rotor at steady state can be analogue to flow experiencing constant angular velocity. Using non-inertial reference frame approximation avoids mesh distortion and frequent remeshing due to rotation. The LES Wall-Adapting Local Eddy-viscosity (WALE) turbulence model is employed with $7$\% of turbulence intensity imposed at the inlet. 
+As to the simulation set up, the velocity distribution is prescribed at the inlet (Fig.~\ref{fig:pumpgeo}), where the velocity profiles are obtained from the experimental measurements using PIV \cite{cpi}. The pressure at the outlet is set to be constant. Since the goal is to predict the flow field after reaching steady state, instead of letting the rotor rotate during simulation, the non-inertial reference frame is applied on the fluid around the rotor. This is because the flow around the rotor at steady state can be analogue to flow experiencing constant angular velocity. Using non-inertial reference frame approximation avoids mesh distortion and frequent remeshing due to rotation. The LES Wall-Adapting Local Eddy-viscosity (WALE) turbulence model is employed. 
 
 The simulation domain is decomposed into around $1$ million tetrahedron elements. The mesh size is $0.5$ mm on the rotor blades and $0.3$ mm at the outlet of the chamber to diffuser. The mesh is locally refined around the throat as shown in Fig.~\ref{fig:pumpmesh}. The simulation result is obtained after $15$ rotations when the pump flow already reaches steady state. The time step size is around $10^{-5}$ s in FEM and PFEM-2 simulations at steady state so that the CFL number is less or equal than $1$.  
 
@@ -106,7 +106,9 @@ The simulation domain is decomposed into around $1$ million tetrahedron elements
 \end{figure}
 
 % pump result & analysis
-The obtained pressure difference across the pump by experiment and simulations are listed in Table~\ref{tab:pumppres}. Using FEM the discrepancy with experiment is only $3.6$\%. However, PFEM-2 predicts a much higher pressure difference. From the distribution of the velocity and pressure fields in the chamber (Fig. \ref{fig:pumpvel} and \ref{fig:pumppres}, it can be observed that the velocity pattern obtained with PFEM-2 is different from FEM. With PFEM-2, the velocity is higher mainly in front of the leading edge of the blade, where with FEM, the velocity is higher at both side of the blade, but more on the trailing edge. \textbf{CHECK:} ***This might be due to in the present PFEM-2 method, the advection and viscous effect are treated separately and sequentially, and an explicit integration scheme is employed. As a result, the particles pushed by the rotor blades have less tendency to turn in chamber than FEM, which can be observed from the streamline plot in Fig.~\ref{fig:pumpsl}. This leads to a larger pressure gradient in the radial direction in order to make particles turn in the chamber. ***
+The obtained pressure difference across the pump by experiment and simulations are listed in Table~\ref{tab:pumppres}. Using FEM the discrepancy with experiment is only $3.6$\%. On the other hand, PFEM-2 predicts a lower pressure difference with $14.6$\% discrepancy compared to experiment. From the distribution of the velocity and pressure fields in the chamber (Fig. \ref{fig:pumpvel} and \ref{fig:pumppres}, the results by PFEM-2 and FEM are qualitatively in accordance with each other. Some discrepancies of velocity field can be found at the trailing edge near the blade tips, and in jet flow in the diffuser. 
+
+%it can be observed that the velocity pattern obtained with PFEM-2 is different from FEM. With PFEM-2, the velocity is higher mainly in front of the leading edge of the blade, where with FEM, the velocity is higher at both side of the blade, but more on the trailing edge. \textbf{CHECK:} ***This might be due to in the present PFEM-2 method, the advection and viscous effect are treated separately and sequentially, and an explicit integration scheme is employed. As a result, the particles pushed by the rotor blades have less tendency to turn in chamber than FEM, which can be observed from the streamline plot in Fig.~\ref{fig:pumpsl}. This leads to a larger pressure gradient in the radial direction in order to make particles turn in the chamber. ***
 
 \begin{table}[h]
 \caption {Pressure differences across the pump.}\label{tab:pumppres} 
@@ -116,7 +118,7 @@ The obtained pressure difference across the pump by experiment and simulations a
  & Pressure (mmHg) \\ \hline
 Experiment \cite{mali_cfd}    & 272.38    \\ \hline
 FEM    & 282.40             \\ \hline
-PFEM-2    & 489.64          \\ \hline
+PFEM-2    & 232.59          \\ \hline
 \end{tabular}
 \end{table}
 
@@ -138,16 +140,7 @@ PFEM-2    & 489.64          \\ \hline
     \label{fig:pumppres}
 \end{figure}
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=2.2in]{imgs/nozzle_pump/pump_sl_fem.png}\\
-    \vspace{.5cm}
-    \includegraphics[width=2.2in]{imgs/nozzle_pump/pump_sl_pfem.png}
-    \caption{The streamlines starting at the top blade on the same plane as in Fig.~\ref{fig:pumpvel} and \ref{fig:pumppres} using FEM (top) and PFEM-2 (bottom).}
-    \label{fig:pumpsl}
-\end{figure}
-
-Fig.~\ref{fig:pumpvelprofile} depicts the comparison of velocity profile in the pump chamber and diffuser compared with experimental measurements \cite{mali_cfd}. The velocity profile between blades by FEM is in accordance with experiments, where the result by PFEM-2 exhibits a more shallow slope near the blade tip. Both FEM and PFEM-2 predict the detached jet in the outlet diffuser leaning more against the outer wall and the velocity magnitude appears to be larger with FEM. The phenomenon may be due to using non-inertial reference frame approximation, because similar velocity distribution can also be observed in most of other numerical results also using non-inertial reference frame \cite{mali_cfd}. 
+Fig.~\ref{fig:pumpvelprofile} depicts the comparison of velocity profile in the pump chamber and diffuser compared with experimental measurements \cite{mali_cfd}. The velocity profile between blades by FEM and PFEM-2 are both in accordance with experiments. In the outlet diffuser, FEM predicts the detached jet leaning more against the outer wall and the velocity magnitude appears to be larger than experiments. The phenomenon may be due to the usage of the non-inertial reference frame approximation, because similar velocity distribution in diffuser can also be observed in most of other numerical results also using non-inertial reference frame \cite{mali_cfd}.  
  
 \begin{figure}[htbp]
     \centering
