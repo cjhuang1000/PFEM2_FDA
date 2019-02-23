@@ -15,7 +15,6 @@ The expression in Eq.~(\ref{xivs}) is explicit since it only depends on values f
 \end{equation}
 where $\Delta t$ is the time step and $\Delta x$ the mesh size.
 %
-where $\Delta t$ is the time step and $\Delta x$ is the mesh size.
 In summary, this means that each particle will be able to travel more than one element without compromising the stability of the method.
 
 It is important to remark that the particles carry valuable information from all the states previous to their current location and preserving that information will have a big influence in the final accuracy of the method. That is why instead of interpolating the mesh velocity to the particle the change of the mesh velocity should be applied. So in Eq.~(\ref{xivs}):
