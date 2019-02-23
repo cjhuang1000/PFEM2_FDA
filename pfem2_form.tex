@@ -58,7 +58,7 @@ A step-by-step summary of the final algorithm for solving Navier-Stokes using fr
 \begin{algorithmic}[1]
 \STATE Compute the convection moving particles along streamlines (X-IVS)(Eq.~(\ref{xivs})).
 \STATE Map particle velocities to mesh (Eq.~(\ref{eq:mapptom})).
-\STATE Solve the system of Eq.~(\ref{eq:masamat})-(\ref{eq:matunm2}) with $\beta=0$.
+\STATE Solve the system of Eqs.~(\ref{eq:masamat})-(\ref{eq:matunm2}) with $\beta=0$.
 \STATE Correct velocity on particles (Eq.~(\ref{eq:partcor})).
 \STATE Reseed particles if necessary.
 \STATE Remove particles if allowed.
