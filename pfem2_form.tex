@@ -3,7 +3,7 @@ The PFEM-2 method is a generalization of the Particle Finite Element Method (PFE
 \begin{equation}\label{xivs}
   \begin{cases}
     \vect{x}_q^{n+1}=\vect{x}_q^n+\int_n^{n+1} \vect{u}^n(\vect{x}_q^\tau) d\tau,\\
-    \hat{\vect{u}}^{n+1}_q=\vect{u}_q^n.
+    \hat{\vect{u}}^{n+1}_q=\vect{u}_q^n,
   \end{cases}
 \end{equation}
 where $\tau$ represents the time domain.
@@ -23,7 +23,7 @@ It is important to remark that the particles carry valuable information from all
   \vect{u}_q^{n}=\vect{u}_q^{n-1}+\sum_{i}N_i(\vect{x}_q^n)(\vect{u}_i^n-\vect{u}_i^{n-1}),
 \end{equation}
 %
-being $N_i$ the shape function of node $i$ for the host element of particle $p$.
+being $N_i$ the shape function of node $i$ for the host element of particle $q$.
 \begin{figure}[htp] 
 \centering 
 \includegraphics[scale=.6]{./imgs/xivs.eps}
@@ -42,7 +42,7 @@ Once the particles are moved to their new $t^{n+1}$ position the field $\phi$ th
 To minimize $E_g$ Eq.~(\ref{eq:minim}) is derived with respect to $\phi_j$ and equaled to zero leading to the system of $J$ unknowns:
 %
 \begin{equation}\label{eq:mapptom}
-  \vect{M}\vect{\phi}=\vect{f}
+  \vect{M}\vect{\phi}=\vect{f},
 \end{equation}
 %
 where $J$ is the total number of nodes in the mesh, $\vect{M}_{ij}=\sum_qN_i(\vect{x}_q)N_j(\vect{x}_q)$ is a consistent mass matrix, $\vect{\phi}$ are the unknown nodal values and $\vect{f}_i=\sum_qN_i(\vect{x}_q)\phi_q$.
@@ -56,12 +56,12 @@ A step-by-step summary of the final algorithm for solving Navier-Stokes using fr
 \caption{Summary of the steps needed for solving Navier-Stokes using fractional steps and PFEM-2.}
 \label{algo:pfem2}
 \begin{algorithmic}[1]
-\STATE Compute the convection moving particles along streamlines (X-IVS)(Eq.~(\ref{xivs})).
-\STATE Map particle velocities to mesh (Eq.~(\ref{eq:mapptom})).
-\STATE Solve the system of Eqs.~(\ref{eq:masamat})-(\ref{eq:matunm2}) with $\beta=0$.
-\STATE Correct velocity on particles (Eq.~(\ref{eq:partcor})).
-\STATE Reseed particles if necessary.
-\STATE Remove particles if allowed.
+\STATE compute the convection moving particles along streamlines (X-IVS)(Eq.~(\ref{xivs})),
+\STATE map particle velocities to mesh (Eq.~(\ref{eq:mapptom})),
+\STATE solve the system of Eqs.~(\ref{eq:masamat})-(\ref{eq:matunm2}) with $\beta=0$,
+\STATE correct velocity on particles (Eq.~(\ref{eq:partcor})),
+\STATE reseed particles if necessary,
+\STATE remove particles if allowed.
 \end{algorithmic}
 \end{algorithm} 
 %
