@@ -1,20 +1,20 @@
 \subsection{Inferior Vena Cava}
 
 % intro
-In this study, the geometry of the IVC system consists of two iliac veins merging to one infrarenal IVC as shown in Fig.~\ref{fig:IVCgeo}. This patient-averaged IVC geometry is proposed by \cite{gallagher_exp} from the CT data of $10$ patients. The flows enter from the two iliac veins and merge after entering the infrarenal IVC, which has hydraulic diameter about $28$ mm. 
-The simulations of the flow in IVC are conducted according to the parameters provided in \cite{craven_cfd}. The simulations of two flowrates are performed corresponding to the resting and exercising conditions, which are $Q= 0.5$ l/min and $3$ l/min into two iliac veins respectively. The corresponding Reynolds numbers for resting and exercising conditions are $236$ and $1505$. The flow is considered to be laminar in the IVC. For boundary conditions, the parabolic velocity profile is prescribed at the inlet of two iliac veins, and the constant pressure is imposed at the outlet of the infrarenal IVC.
-In the following section, a grid convergence study is performed on the IVC flow first using FEM at the exercising condition. Secondly, the simulation results using FEM and PFEM-2 will be compared with the PIV experimental results in \cite{gallagher_exp}. 
+In this study, the geometry of the IVC system consists of two iliac veins merging to one infrarenal IVC as shown in Fig.~\ref{fig:IVCgeo}. This patient-averaged IVC geometry is proposed by \cite{gallagher_exp} from the CT data of $10$ patients. The flows enter from the two iliac veins and merge after entering the infrarenal IVC, which has a hydraulic diameter of about $28$ mm. 
+The simulations of the flow in the IVC are conducted according to the parameters provided in \cite{craven_cfd}. The simulations of two flowrates are performed corresponding to the resting and exercising conditions, which are $Q=0.5$ l/min and $3$ l/min into two iliac veins respectively. The corresponding Reynolds numbers for resting and exercising conditions are $236$ and $1505$. The flow is considered to be laminar in the IVC. A parabolic velocity profile is prescribed at the inlet of the two iliac veins, and a constant pressure boundary condition is imposed at the outlet of the infrarenal IVC.
+In the following section a grid convergence study is performed on the IVC flow using FEM at the exercising condition. After that the simulation results using FEM and PFEM-2 will be compared with the PIV experimental results in \cite{gallagher_exp} for both resting and exercising contitions. 
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=0.3]{imgs/vena_cava/venacava_plot.eps}
-    \caption{The patient-averagved IVC geometry proposed by \cite{gallagher_exp} .}
+    \caption{The patient-averagved IVC geometry proposed by \cite{gallagher_exp}.}
     \label{fig:IVCgeo}
 \end{figure}
 
 \subsubsection*{Grid Convergence Test}
 
-In the grid convergence test, five tetrahedral meshes with different mesh sizes are tested. The mesh sizes are from $0.45$ mm to $2$ mm so that the domain is decomposed into to around $0.87$ million to $37.94$ million tetrahedral elements (Table~\ref{tab:meshsize}). The transverse cross-sections of mesh $2$ and $4$ located at around $10$ cm downstream of the confluence of two iliac veins are shown in the Fig.~\ref{fig:IVCmesh}.
+In the grid convergence test, five tetrahedral meshes with different mesh sizes are tested. The mesh sizes vary from $0.45$ mm to $2$ mm so that the domain is decomposed into to around $0.87$ million to $37.94$ million tetrahedral elements (Table~\ref{tab:meshsize}). The transverse cross-sections of mesh $2$ and $4$ located at around $10$ cm downstream of the confluence of two iliac veins are shown in the Fig.~\ref{fig:IVCmesh}.
 
 \begin{table}[h]
 \caption {Meshes sizes and total element numbers used in the convergence test.} \label{tab:meshsize}
@@ -33,7 +33,7 @@ Mesh & Number of element ($\times10^6$)& mesh size (mm) \\ \hline
 \begin{figure}[h]\centering
     \includegraphics[width=0.5\linewidth]{imgs/vena_cava/mesh2_fixed.png}
     \includegraphics[width=0.5\linewidth]{imgs/vena_cava/mesh4.png}
-    \caption{The transverse cross-sectional view of mesh 2 (top) and 4 (bottom) in the grid convergence study. The cross-section is located at 10 cm downstream of the confluence of two iliac veins.}
+    \caption{The transverse cross-sectional view of mesh 2 (top) and 4 (bottom) in the grid convergence study. The cross-section is located at 10 cm downstream of the confluence of the two iliac veins.}
     \label{fig:IVCmesh}
 \end{figure}
 
@@ -47,7 +47,7 @@ and the volume-averaged helicity intensity $\overline{HI}$ can be calculated usi
 \overline{HI}=\frac{1}{V}\int_V \left|u\cdot\omega\right| dV.
 \label{eq:HI}
 \end{equation}
-The area-averaged transverse velocity magnitude,
+The area-averaged transverse velocity magnitude is defined as
 \begin{equation}
 \overline{\left|u_{tr}\right|}=\frac{1}{A}\int_A \left|u _\|\right| dA,
 \label{eq:utr}
@@ -126,17 +126,17 @@ The obtained velocity magnitude field and LNH field with above-mentioned five me
     \label{fig:lnh}
 \end{figure*}
 
-The quantitative analysis of the convergence study using maximum nodal velocity, area-averaged transverse velocity magnitude and volume-averaged helicity intensity are tabulated in Table~\ref{tab:convergence}, where $p$ represent the order of convergence.
+The quantitative analysis of the convergence study using maximum nodal velocity, area-averaged transverse velocity magnitude and volume-averaged helicity intensity are tabulated in Table~\ref{tab:convergence}, where $R$ represent the order of convergence.
 It can be observed that the transverse velocity and helicity values converge when meshes get finer. But for the maximum nodal velocity, the trend is monotonic except for the result by mesh $1$. This might be because the nodal maximum velocity can be affected by how the domain is decomposed. In the following section, the mesh $2$ and $3$ are chosen in the simulations of IVC flow at resting and exercising conditions.
 
 % choose either one: with  p or not with p
 \begin{table*}[]
 \centering
-\caption {The value of maximum velocity, transverse velocity, Helicity and the corresponding order of convergence $p$.} \label{tab:convergence}
+\caption {The value of maximum velocity, transverse velocity, Helicity and the corresponding order of convergence $R$.} \label{tab:convergence}
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
      & \multicolumn{2}{c|}{maximum velocity} & \multicolumn{2}{c|}{transverse velocity} & \multicolumn{2}{c|}{Helicity} \\ \hline
-Mesh & $\left |u\right |_{max} $    & p             & $\overline{\left |u_{tr}\right |}$          & p              &   $\overline{HI}$              & p           \\ \hline
+Mesh & $\left |u\right |_{max} $    & R             & $\overline{\left |u_{tr}\right |}$          & R              &   $\overline{HI}$              & p           \\ \hline
 1    & 0.2549               &               & 0.0238                 &                & 0.3807         &             \\ \hline
 2    & 0.2585               &               & 0.0244                 &                & 0.4132         &             \\ \hline
 3    & 0.2567               & 2.36       & 0.0247                 & 2.40          & 0.4331         & 1.63        \\ \hline
@@ -162,9 +162,9 @@ Mesh & $u_{max}$ & Transverse velocity &  Helicity       \\ \hline
 \fi
 %------------------------------------
 
-\subsubsection*{Comparison with Experimental Results}
+\subsubsection*{Comparison of FEM and PFEM-2 with Experimental Results}
 
-The velocity fields predicted by FEM and PFEM-2 methods are compared quantitatively with PIV experimental result by \cite{gallagher_exp} on a selected sagittal plane and a coronal plane as illustrated in Fig.~\ref{fig:IVCPIV} at two flow conditions. The FEM and PFEM-2 solvers use the same mesh under the same flow conditions. The experimental and simulation results of the in-plane 2D velocity magnitudes in the sagittal and coronal planes at resting and exercising conditions are shown in the Figs.~\ref{fig:rest} and \ref{fig:exercise}. It shows that the results by FEM and PFEM-2 solvers both match qualitatively with the PIV results. 
+The velocity fields predicted by FEM and PFEM-2 methods are compared quantitatively with PIV experimental result obtained by \cite{gallagher_exp} on a selected sagittal plane and a coronal plane as illustrated in Fig.~\ref{fig:IVCPIV} at two flow conditions. The FEM and PFEM-2 solvers use the same mesh under the same flow conditions. The experimental and simulation results of the in-plane 2D velocity magnitudes in the sagittal and coronal planes at resting and exercising conditions are shown in Figs.~\ref{fig:rest} and \ref{fig:exercise}. The figures show that the results by FEM and PFEM-2 solvers both match qualitatively with the PIV results. Note that the impoerfiections observed in Figs.~\ref{fig:rest} and \ref{fig:exercise} in the form of holes originate in the mesh used for the PIV data which is the one used to map the numerical results for the comparison.
 
 \begin{figure}[htbp]
     \centering
@@ -174,7 +174,7 @@ The velocity fields predicted by FEM and PFEM-2 methods are compared quantitativ
     \begin{minipage}[c][8cm][c]{0.2\textwidth} 
     \includegraphics[scale=0.25]{imgs/vena_cava/venacava_piv3.pdf}
     \end{minipage} 
-    \caption{The sagittal and coronal planes where the velocity field are measured in experiment \cite{gallagher_exp}.}
+    \caption{The sagittal and coronal planes where the velocity field is measured in experiment \cite{gallagher_exp}.}
     \label{fig:IVCPIV}
 \end{figure}
 
@@ -206,7 +206,7 @@ The velocity fields predicted by FEM and PFEM-2 methods are compared quantitativ
 \includegraphics[height=3cm]{imgs/vena_cava/colormap_rest.png}
 \\
 \end{minipage}
-\caption{The in-plane 2D velocity magnitude in coronal (top) and sagittal (bottom) planes of PIV, FEM and PFEM-2 results at resting condition}
+\caption{The in-plane 2D velocity magnitude in coronal (top) and sagittal (bottom) planes of PIV, FEM and PFEM-2 results at resting condition.}
 \label{fig:rest}
 \end{figure*}
 
@@ -238,7 +238,7 @@ The velocity fields predicted by FEM and PFEM-2 methods are compared quantitativ
 \includegraphics[height=3cm]{imgs/vena_cava/colormap_exercise.png}
 \\
 \end{minipage}
-\caption{The in-plane 2D velocity magnitude in coronal (top) and sagittal (bottom) planes of PIV, FEM and PFEM-2 results at resting condition}
+\caption{The in-plane 2D velocity magnitude in coronal (top) and sagittal (bottom) planes of PIV, FEM and PFEM-2 results at resting condition.}
 \label{fig:exercise}
 \end{figure*}
 
