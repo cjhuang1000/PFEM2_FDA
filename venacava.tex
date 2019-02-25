@@ -14,7 +14,7 @@ In the following section a grid convergence study is performed on the IVC flow u
 
 \subsubsection*{Grid Convergence Test}
 
-In the grid convergence test, five tetrahedral meshes with different mesh sizes are tested. The mesh sizes vary from $0.45$ mm to $2$ mm so that the domain is decomposed into to around $0.87$ million to $37.94$ million tetrahedral elements (Table~\ref{tab:meshsize}). The transverse cross-sections of mesh $2$ and $4$ located at around $10$ cm downstream of the confluence of two iliac veins are shown in the Fig.~\ref{fig:IVCmesh}.
+In the grid convergence test, five tetrahedral meshes with different mesh sizes are tested. The mesh sizes vary from $0.45$ mm to $2$ mm so that the domain is decomposed into to around $0.87$ million to $37.94$ million tetrahedral elements (Table~\ref{tab:meshsize}). The transverse cross-sections of mesh 2 and 4 located at around $10$ cm downstream of the confluence of two iliac veins are shown in the Fig.~\ref{fig:IVCmesh}.
 
 \begin{table}[h]
 \caption {Meshes sizes and total element numbers used in the convergence test.} \label{tab:meshsize}
@@ -33,11 +33,11 @@ Mesh & Number of element ($\times10^6$)& mesh size (mm) \\ \hline
 \begin{figure}[h]\centering
     \includegraphics[width=0.5\linewidth]{imgs/vena_cava/mesh2_fixed.png}
     \includegraphics[width=0.5\linewidth]{imgs/vena_cava/mesh4.png}
-    \caption{The transverse cross-sectional view of mesh 2 (top) and 4 (bottom) in the grid convergence study. The cross-section is located at 10 cm downstream of the confluence of the two iliac veins.}
+    \caption{The transverse cross-sectional view of mesh 2 (top) and 4 (bottom) in the grid convergence study. The cross-section is located at $10$ cm downstream of the confluence of the two iliac veins.}
     \label{fig:IVCmesh}
 \end{figure}
 
-The flow simulations with these five meshes are conducted using FEM at exercising condition. The simulation result will be evaluated not only qualitatively with the velocity magnitude field and local normalized helicity field on a transverse cross-sectional plane, but also quantitatively through three scalar quantities: maximum nodal velocity, area-averaged transverse velocity magnitude and volume-averaged helicity intensity. The helicity density $h$, which is defined as the inner product of vorticity and velocity $h=u\cdot\omega$, represents the tendency to have helical flow. The local normalized helicity (LNH) is defined as
+The flow simulations with these five meshes are conducted using FEM at exercising condition. The simulation result will be evaluated not only qualitatively with the velocity magnitude field and local normalized helicity field on a transverse cross-sectional plane, but also quantitatively through three scalar quantities: maximum nodal velocity, area-averaged transverse velocity magnitude and volume-averaged helicity intensity. The helicity density $h$, which is defined as the inner product of velocity and vorticity $h=u\cdot\omega$, represents the tendency to have helical flow. The local normalized helicity (LNH) is defined as
 \begin{equation}
 LNH=\frac{u\cdot\omega}{\left|u\right|\left|\omega\right|},
 \label{eq:LNH}
@@ -54,7 +54,7 @@ The area-averaged transverse velocity magnitude is defined as
 \end{equation}
 where $u _\|$ is the velocity component parallel to the surface representing the measure of the secondary flow. The velocity magnitude field, LNH, and $\overline{\left|u_{tr}\right|}$ will be examined on the transverse cross-sectional plane located at $10$ cm downstream of the confluence point in the present study.  
 
-The obtained velocity magnitude field and LNH field with above-mentioned five meshes on the same transverse cross-sectional plane are shown in Figs.~\ref{fig:velmag} and \ref{fig:lnh}. It can be observed that the resulting flow velocity fields with different sizes of meshes have the similar patterns, but some flow details are unresolved with mesh $1$ and $2$. This phenomenon can also be seen in the resulting LNH fields.
+The obtained velocity magnitude field and LNH field with above-mentioned five meshes on the same transverse cross-sectional plane are shown in Figs.~\ref{fig:velmag} and \ref{fig:lnh}. It can be observed that the resulting flow velocity fields with different sizes of meshes have the similar patterns, but some flow details are unresolved with mesh 1 and 2. This phenomenon can also be seen in the resulting LNH fields.
 
 \begin{figure*}[htbp]
     \centering
@@ -127,7 +127,7 @@ The obtained velocity magnitude field and LNH field with above-mentioned five me
 \end{figure*}
 
 The quantitative analysis of the convergence study using maximum nodal velocity, area-averaged transverse velocity magnitude and volume-averaged helicity intensity are tabulated in Table~\ref{tab:convergence}, where $R$ represent the order of convergence.
-It can be observed that the transverse velocity and helicity values converge when meshes get finer. But for the maximum nodal velocity, the trend is monotonic except for the result by mesh $1$. This might be because the nodal maximum velocity can be affected by how the domain is decomposed. In the following section, the mesh $2$ and $3$ are chosen in the simulations of IVC flow at resting and exercising conditions.
+It can be observed that the transverse velocity and helicity values converge when meshes get finer. But for the maximum nodal velocity, the trend is monotonic except for the result by mesh 1. This might be because the nodal maximum velocity can be affected by how the domain is decomposed. In the following section, the mesh 2 and 3 are chosen in the simulations of IVC flow at resting and exercising conditions.
 
 % choose either one: with  p or not with p
 \begin{table*}[]
@@ -136,7 +136,7 @@ It can be observed that the transverse velocity and helicity values converge whe
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline
      & \multicolumn{2}{c|}{maximum velocity} & \multicolumn{2}{c|}{transverse velocity} & \multicolumn{2}{c|}{Helicity} \\ \hline
-Mesh & $\left |u\right |_{max} $    & R             & $\overline{\left |u_{tr}\right |}$          & R              &   $\overline{HI}$              & p           \\ \hline
+Mesh & $\left |u\right |_{max} $    & R             & $\overline{\left |u_{tr}\right |}$          & R              &   $\overline{HI}$              & R           \\ \hline
 1    & 0.2549               &               & 0.0238                 &                & 0.3807         &             \\ \hline
 2    & 0.2585               &               & 0.0244                 &                & 0.4132         &             \\ \hline
 3    & 0.2567               & 2.36       & 0.0247                 & 2.40          & 0.4331         & 1.63        \\ \hline
@@ -144,27 +144,10 @@ Mesh & $\left |u\right |_{max} $    & R             & $\overline{\left |u_{tr}\r
 5    & 0.2534	          &  2.16      & 0.02502                 & 2.88          & 0.4536         &  2.54        \\ \hline
 \end{tabular}
 \end{table*}
-% 
-\iffalse
-\begin{table}[h]
-\caption {} \label{tab:convergence}
-\centering
-\begin{tabular}{|c|c|c|c|}
-\hline
-Mesh & $u_{max}$ & Transverse velocity &  Helicity       \\ \hline
-1    & 0.25486           & 0.02380        & 0.38067 \\ \hline
-2    & 0.25846           & 0.02443        & 0.41316 \\ \hline
-3    & 0.25666           & 0.02474        & 0.43313 \\ \hline
-4    & 0.25409           & 0.02497        & 0.44978 \\ \hline
-5     & 0.25341	      & 0.02502        & 0.45361         \\ \hline
-\end{tabular}
-\end{table}
-\fi
-%------------------------------------
 
 \subsubsection*{Comparison of FEM and PFEM-2 with Experimental Results}
 
-The velocity fields predicted by FEM and PFEM-2 methods are compared quantitatively with PIV experimental result obtained by \cite{gallagher_exp} on a selected sagittal plane and a coronal plane as illustrated in Fig.~\ref{fig:IVCPIV} at two flow conditions. The FEM and PFEM-2 solvers use the same mesh under the same flow conditions. The experimental and simulation results of the in-plane 2D velocity magnitudes in the sagittal and coronal planes at resting and exercising conditions are shown in Figs.~\ref{fig:rest} and \ref{fig:exercise}. The figures show that the results by FEM and PFEM-2 solvers both match qualitatively with the PIV results. Note that the imperfections observed in Figs.~\ref{fig:rest} and \ref{fig:exercise} in the form of holes originate in the mesh used for the PIV data which is the one used to map the numerical results for the comparison.
+The velocity fields predicted by FEM and PFEM-2 methods are compared quantitatively with PIV experimental resulta obtained by \cite{gallagher_exp} on a selected sagittal plane and a coronal plane as illustrated in Fig.~\ref{fig:IVCPIV} at two flow conditions. The FEM and PFEM-2 solvers use the same mesh under the same flow conditions. The experimental and simulation results of the in-plane 2D velocity magnitudes in the sagittal and coronal planes at resting and exercising conditions are shown in Figs.~\ref{fig:rest} and \ref{fig:exercise}. The figures show that the results by FEM and PFEM-2 solvers both match qualitatively with the PIV results. Note that the imperfections observed in Figs.~\ref{fig:rest} and \ref{fig:exercise} in the form of holes originate in the mesh used for the PIV data which is the one used to map the numerical results for the comparison.
 
 \begin{figure}[htbp]
     \centering
@@ -242,7 +225,7 @@ The velocity fields predicted by FEM and PFEM-2 methods are compared quantitativ
 \label{fig:exercise}
 \end{figure*}
 
-To do quantitative comparison with experiments, the numerically obtained nodal velocities are firstly sampled on to the PIV data points. The magnitude of 2D plane velocity is then calculated on each data points. The global relative error, $E$, can be obtained by averaging the relative error between numerical and experimental result on all points. Table~\ref{tab:rest} and \ref{tab:exercise} shows the global relative error at different flow conditions with FEM, PFEM-2 solvers as well as the numerical analysis reported in \cite{craven_cfd}. The global relative error is around $5$ to $6$\% at resting condition and $6$ to $11$\% at exercising condition. The obtained numerical results have a good agreement with the experimental data. For both conditions, the FEM and PFEM-2 results have similar amount of global relative error with \cite{craven_cfd}. It is worth noting that the mesh sizes used here ($1.4$ mm for resting and $1$ mm for exercising) are coarser than the mesh size ($0.276$ mm) used in \cite{craven_cfd}. Also, the PFEM-2 has nearly the same error compared with FEM at resting condition, and even less error in the coronal plane at exercising condition.
+To do quantitative comparison with experiments, the numerically obtained nodal velocities are firstly sampled on to the PIV data points. The magnitude of 2D plane velocity is then calculated on each data points. The global relative error, $E$, can be obtained by averaging the relative error between numerical and experimental result on all points. Table~\ref{tab:rest} and \ref{tab:exercise} shows the global relative error at different flow conditions with FEM, PFEM-2 solvers as well as the numerical analysis reported in \cite{craven_cfd}. The global relative error is around $5$ to $6$\% at resting condition and $6$ to $11$\% at exercising condition. The obtained numerical results have a good agreement with the experimental data. For both conditions, the FEM and PFEM-2 results have similar amount of global relative error with \cite{craven_cfd}. It is worth noting that the mesh sizes used here ($1.4$ mm for resting and $1$ mm for exercising conditions) are coarser than the mesh size ($0.276$ mm) used in \cite{craven_cfd}. Also, the PFEM-2 has nearly the same error compared with FEM at resting condition, and even less error in the coronal plane at exercising condition.
 
 \begin{table}[h!]
 \caption {Global relative error (\%) between numerical and PIV data at resting condition.} \label{tab:rest}
