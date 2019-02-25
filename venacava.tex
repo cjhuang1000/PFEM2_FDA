@@ -3,12 +3,12 @@
 % intro
 In this study, the geometry of the IVC system consists of two iliac veins merging to one infrarenal IVC as shown in Fig.~\ref{fig:IVCgeo}. This patient-averaged IVC geometry is proposed by \cite{gallagher_exp} from the CT data of $10$ patients. The flows enter from the two iliac veins and merge after entering the infrarenal IVC, which has a hydraulic diameter of about $28$ mm. 
 The simulations of the flow in the IVC are conducted according to the parameters provided in \cite{craven_cfd}. The simulations of two flowrates are performed corresponding to the resting and exercising conditions, which are $Q=0.5$ L/min and $3$ L/min into two iliac veins respectively. The corresponding Reynolds numbers for resting and exercising conditions are $236$ and $1505$. The flow is considered to be laminar in the IVC. A parabolic velocity profile is prescribed at the inlet of the two iliac veins, and a constant pressure boundary condition is imposed at the outlet of the infrarenal IVC.
-In the following section a grid convergence study is performed on the IVC flow using FEM at the exercising condition. After that the simulation results using FEM and PFEM-2 will be compared with the PIV experimental results in \cite{gallagher_exp} for both resting and exercising contitions. 
+In the following section a grid convergence study is performed on the IVC flow using FEM at the exercising condition. After that the simulation results using FEM and PFEM-2 will be compared with the PIV experimental results in \cite{gallagher_exp} for both resting and exercising conditions. 
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[scale=0.3]{imgs/vena_cava/venacava_plot.eps}
-    \caption{The patient-averagved IVC geometry proposed by \cite{gallagher_exp}.}
+    \caption{The patient-averaged IVC geometry proposed by \cite{gallagher_exp}.}
     \label{fig:IVCgeo}
 \end{figure}
 
@@ -164,7 +164,7 @@ Mesh & $u_{max}$ & Transverse velocity &  Helicity       \\ \hline
 
 \subsubsection*{Comparison of FEM and PFEM-2 with Experimental Results}
 
-The velocity fields predicted by FEM and PFEM-2 methods are compared quantitatively with PIV experimental result obtained by \cite{gallagher_exp} on a selected sagittal plane and a coronal plane as illustrated in Fig.~\ref{fig:IVCPIV} at two flow conditions. The FEM and PFEM-2 solvers use the same mesh under the same flow conditions. The experimental and simulation results of the in-plane 2D velocity magnitudes in the sagittal and coronal planes at resting and exercising conditions are shown in Figs.~\ref{fig:rest} and \ref{fig:exercise}. The figures show that the results by FEM and PFEM-2 solvers both match qualitatively with the PIV results. Note that the impoerfiections observed in Figs.~\ref{fig:rest} and \ref{fig:exercise} in the form of holes originate in the mesh used for the PIV data which is the one used to map the numerical results for the comparison.
+The velocity fields predicted by FEM and PFEM-2 methods are compared quantitatively with PIV experimental result obtained by \cite{gallagher_exp} on a selected sagittal plane and a coronal plane as illustrated in Fig.~\ref{fig:IVCPIV} at two flow conditions. The FEM and PFEM-2 solvers use the same mesh under the same flow conditions. The experimental and simulation results of the in-plane 2D velocity magnitudes in the sagittal and coronal planes at resting and exercising conditions are shown in Figs.~\ref{fig:rest} and \ref{fig:exercise}. The figures show that the results by FEM and PFEM-2 solvers both match qualitatively with the PIV results. Note that the imperfections observed in Figs.~\ref{fig:rest} and \ref{fig:exercise} in the form of holes originate in the mesh used for the PIV data which is the one used to map the numerical results for the comparison.
 
 \begin{figure}[htbp]
     \centering
